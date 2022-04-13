@@ -6,7 +6,7 @@
 /*   By: ngda-sil <ngda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 22:38:24 by ngda-sil          #+#    #+#             */
-/*   Updated: 2022/04/07 17:49:38 by ngda-sil         ###   ########.fr       */
+/*   Updated: 2022/04/13 16:54:40 by ngda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <limits.h>
 # include <stdarg.h>
 # include <stddef.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
