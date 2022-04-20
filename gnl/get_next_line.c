@@ -16,6 +16,31 @@
 # define BUFFER_SIZE 10
 #endif
 
+static char	*ft_strjoin(char *s1, char *s2)
+{
+	char	*s;
+	int		i;
+	int		j;
+
+	if (!s1)
+	{
+		s1 = (char *)malloc(1 * sizeof(char));
+		s1[0] = '\0';
+	}
+	s = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!s)
+		return (NULL);
+	j = -1;
+	while (s1[++j])
+		s[j] = s1[j];
+	i = 0;
+	while (s2[i])
+		s[j++] = s2[i++];
+	s[j] = '\0';
+	free(s1);
+	return (s);
+}
+
 char	*read_to_buf_copy(int fd, char *buf_copy)
 {
 	char	*buf;
