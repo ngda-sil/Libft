@@ -6,14 +6,14 @@
 /*   By: ngda-sil <ngda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 09:17:35 by ngda-sil          #+#    #+#             */
-/*   Updated: 2022/04/07 17:49:22 by ngda-sil         ###   ########.fr       */
+/*   Updated: 2022/04/20 15:47:19 by ngda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/libft.h"
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 100
+# define BUFFER_SIZE 10
 #endif
 
 char	*read_to_buf_copy(int fd, char *buf_copy)
