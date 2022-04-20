@@ -16,7 +16,7 @@
 # define BUFFER_SIZE 10
 #endif
 
-static char	*ft_strjoin(char *s1, char *s2)
+static char	*gnl_strjoin(char *s1, char *s2)
 {
 	char	*s;
 	int		i;
@@ -59,7 +59,7 @@ char	*read_to_buf_copy(int fd, char *buf_copy)
 			return (NULL);
 		}
 		buf[bytes_read] = '\0';
-		buf_copy = ft_strjoin(buf_copy, buf);
+		buf_copy = gnl_strjoin(buf_copy, buf);
 	}
 	free (buf);
 	return (buf_copy);
