@@ -40,7 +40,6 @@ static char	*gnl_strjoin(char *s1, char *s2)
 	free(s1);
 	return (s);
 }
-
 char	*read_to_buf_copy(int fd, char *buf_copy)
 {
 	char	*buf;
@@ -113,9 +112,7 @@ char	*new_buf_copy(char *buf_copy)
 		return (NULL);
 	i++;
 	while (buf_copy[i])
-	{
 		new_buf[j++] = buf_copy[i++];
-	}
 	new_buf[j] = '\0';
 	free(buf_copy);
 	return (new_buf);
@@ -126,7 +123,7 @@ char	*get_next_line(int fd)
 	static char	*buf_copy;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd == -1 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buf_copy = read_to_buf_copy(fd, buf_copy);
 	if (!buf_copy)
