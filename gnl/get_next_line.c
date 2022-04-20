@@ -6,7 +6,7 @@
 /*   By: ngda-sil <ngda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 09:17:35 by ngda-sil          #+#    #+#             */
-/*   Updated: 2022/04/20 15:47:19 by ngda-sil         ###   ########.fr       */
+/*   Updated: 2022/04/20 15:52:21 by ngda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ char	*get_next_line(int fd)
 	static char	*buf_copy;
 	char		*line;
 
-	if (fd == -1 || fd > 100 || BUFFER_SIZE <= 0)
+	if (fd > 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buf_copy = read_to_buf_copy(fd, buf_copy);
 	if (!buf_copy)
