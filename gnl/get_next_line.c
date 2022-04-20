@@ -126,7 +126,7 @@ char	*get_next_line(int fd)
 	static char	*buf_copy;
 	char		*line;
 
-	if (fd > 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buf_copy = read_to_buf_copy(fd, buf_copy);
 	if (!buf_copy)
