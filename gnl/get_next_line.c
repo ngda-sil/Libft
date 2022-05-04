@@ -6,15 +6,40 @@
 /*   By: ngda-sil <ngda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 09:17:35 by ngda-sil          #+#    #+#             */
-/*   Updated: 2022/04/07 17:49:22 by ngda-sil         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:39:47 by ngda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/libft.h"
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 100
+# define BUFFER_SIZE 10
 #endif
+
+static char	*gnl_strjoin(char *s1, char *s2)
+{
+	char	*s;
+	int		i;
+	int		j;
+
+	if (!s1)
+	{
+		s1 = (char *)malloc(1 * sizeof(char));
+		s1[0] = '\0';
+	}
+	s = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!s)
+		return (NULL);
+	j = -1;
+	while (s1[++j])
+		s[j] = s1[j];
+	i = 0;
+	while (s2[i])
+		s[j++] = s2[i++];
+	s[j] = '\0';
+	free(s1);
+	return (s);
+}
 
 char	*read_to_buf_copy(int fd, char *buf_copy)
 {
@@ -34,7 +59,7 @@ char	*read_to_buf_copy(int fd, char *buf_copy)
 			return (NULL);
 		}
 		buf[bytes_read] = '\0';
-		buf_copy = ft_strjoin(buf_copy, buf);
+		buf_copy = gnl_strjoin(buf_copy, buf);
 	}
 	free (buf);
 	return (buf_copy);
@@ -88,9 +113,7 @@ char	*new_buf_copy(char *buf_copy)
 		return (NULL);
 	i++;
 	while (buf_copy[i])
-	{
 		new_buf[j++] = buf_copy[i++];
-	}
 	new_buf[j] = '\0';
 	free(buf_copy);
 	return (new_buf);
@@ -101,7 +124,7 @@ char	*get_next_line(int fd)
 	static char	*buf_copy;
 	char		*line;
 
-	if (fd == -1 || fd > 100 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buf_copy = read_to_buf_copy(fd, buf_copy);
 	if (!buf_copy)
