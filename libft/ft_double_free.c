@@ -6,11 +6,11 @@
 /*   By: ngda-sil <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 21:25:31 by ngda-sil          #+#    #+#             */
-/*   Updated: 2022/03/07 16:55:59 by ngda-sil         ###   ########.fr       */
+/*   Updated: 2022/05/04 19:44:25 by ngda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../incl/libft.h"
 
 void	ft_double_free(char **str)
 {

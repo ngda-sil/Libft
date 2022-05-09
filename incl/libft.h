@@ -6,7 +6,7 @@
 /*   By: ngda-sil <ngda-sil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 22:38:24 by ngda-sil          #+#    #+#             */
-/*   Updated: 2022/05/04 19:42:05 by ngda-sil         ###   ########.fr       */
+/*   Updated: 2022/05/04 20:18:20 by ngda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
 
 void	ft_bzero(void *s, size_t n);
-void	ft_double_free(char **str)
+void	ft_double_free(char **str);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr(int nb);
